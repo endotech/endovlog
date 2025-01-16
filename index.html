@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>えんどう、豆に書くブログ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: url('endo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .post {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .post img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .post .text {
+            flex: 1;
+        }
+        .post .date {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .post .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .post button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .post button:hover {
+            background-color: #45a049;
+        }
+        .post button.bad {
+            background-color: #f44336;
+        }
+        .post button.bad:hover {
+            background-color: #e53935;
+        }
+        .post .count {
+            margin-left: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        えんどう、豆に書くブログ
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <img src="ramen.png" alt="ラーメン">
+            <div class="text">
+                <p class="date">（１）投稿日時: 令和6年4月8日 (火) 18:27</p>
+                <p>剣道終わった～、やっぱりめちゃくちゃおいしい。近所のラーメン屋「コテコテ麺」に行くべき。部活後はこれだね！<br>
+                P.S. 「まもる（俺）の剣道」とかけて、「ラーメン」と解く。その心は、「どちらも良いメン」を打つでしょう。</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="tarot.png" alt="占い">
+            <div class="text">
+                <p class="date">（２）投稿日時: 令和6年4月9日 (水) 13:12</p>
+                <p>今日は土曜だから休み。いつも昼までねてしまう...暇だったから占いサイトをみつけたのでやってみた。<br>
+                当たりすぎてて、やばいぜ。</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="sushi.png" alt="寿司">
+            <div class="text">
+                <p class="date">（３）投稿日時: 令和6年4月10日 (木) 21:12</p>
+                <p>日曜の夜は親が21時までテニスクラブに行くから、夕飯つくってくれない<br>
+                家の前のセブンでいつも寿司を買って食べる！<br>
+                最高においしい！！</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="sketch.png" alt="美術">
+            <div class="text">
+                <p class="date">（４）投稿日時: 令和6年4月18日 (火) 13:27</p>
+                <p>美術の授業で、友達が書いた俺の顔！<br>
+                めっちゃ、芸術的（笑）</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="street.jpg" width=200 alt="朝練">
+            <div class="text">
+                <p class="date">（５）投稿日時: 令和6年4月19日 (水) 6:15</p>
+                <p>いまから朝練に行く、街灯がいい感じなー。<br>
+                人も車もほとんど通らないから、スムーズに行けるからうれしい！</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <img src="friends.png" alt="朝練">
+            <div class="text">
+                    <p class="date">（６）投稿日時: 令和6年4月27日 (水) 18:35</p>
+                    <p>サイバー中学のときの友達にばったりあった！<br>
+                    翔平は高校でサッカー部に入ったらしい<br>
+                    今度試合でサイバー工業高校までくるから、会えるかなー。<br>
+                    でも下手だから、余裕勝ちだな（笑）</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <img src="hikarin.png" alt="朝練">
+            <div class="text">
+                <p class="date">（７）投稿日時: 令和6年5月8日 (水) 9:54</p>
+                <p>HIKARIN（ヒカリン）がコテコテ麺にいる！<br>
+                写真撮っちゃった。すごくねぇ！</p>
+                <div class="buttons">
+                    <button onclick="likePost(this)">👍 いいね <span class="count">0</span></button>
+                    <button class="bad" onclick="dislikePost(this)">👎 バッド <span class="count">0</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function likePost(button) {
+            let count = button.querySelector('.count');
+            count.textContent = parseInt(count.textContent) + 1;
+        }
+
+        function dislikePost(button) {
+            let count = button.querySelector('.count');
+            count.textContent = parseInt(count.textContent) + 1;
+        }
+    </script>
+</body>
+</html>
